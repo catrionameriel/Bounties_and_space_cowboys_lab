@@ -57,4 +57,13 @@ class Bounties
       db.close
     end
 
+    def delete
+      db = PG.connect( { dbname: 'bounties_database', host: 'localhost'} )
+      sql = "DELETE FROM bounties_table WHERE id = $1"
+      values = [@id]
+      db.prepare("delete", sql)
+      db.exec_prepared("delete", values)
+      db.close
+    end
+
 end

@@ -11,11 +11,12 @@ bountie_01 = Bounties.new(
 }
 )
 
-bountie_01.save
+# bountie_01.save
+#
+# bountie_01.name = 'Joe'
+# bountie_01.update
 
-bountie_01.name = 'Joe'
-bountie_01.update
-
+Bounties.delete_by_id(1)
 
 binding.pry
 nil

@@ -12,12 +12,13 @@ bountie_01 = Bounties.new(
 )
 
 bountie_01.save
-bountie_01.delete
+# bountie_01.delete
 #
 # bountie_01.name = 'Joe'
 # bountie_01.update
 
 # Bounties.delete_by_id(1)
+pp Bounties.find(4)
 
 binding.pry
 nil

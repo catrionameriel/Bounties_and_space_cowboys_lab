@@ -77,7 +77,7 @@ class Bounties
     end
 
 
-    def self.update_name_by_id(id, what_to_change)
+    def self.update_name_by_id(id, updated_name)
       db = PG.connect( {dbname: 'bounties_database', host: 'localhost'} )
       sql = "UPDATE bounties_table SET (
       name,
@@ -88,7 +88,7 @@ class Bounties
       =
       ($1, $2, $3, $4)
       WHERE id = $5"
-      values = [@name, @favourite_weapon, @bounty_value, @cashed_in, id]
+      values = [updated_name, @favourite_weapon, @bounty_value, @cashed_in, id]
       db.prepare("update_by_id", sql)
       db.exec_prepared("update_by_id", values)
     end

@@ -30,7 +30,7 @@ bounty_02.save
 Bounties.update_by_id(11,)
 
 
-# Bounties.delete_by_id(1)
+Bounties.delete_by_id(1)
 pp Bounties.find(11)
 
 binding.pry

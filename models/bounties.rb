@@ -71,10 +71,22 @@ class Bounties
       sql = "SELECT * FROM bounties_table WHERE id = $1"
       values = [id]
       db.prepare('find', sql)
-      found = db.exec_prepared('find', values)
-      return found.map {|f| Bounties.new(f)}
+      found_row = db.exec_prepared('find', values)
+      return found_row.map {|hash| Bounties.new(hash)}
       db.close
     end
+
+    # def Bounty.find(id) # ANSWER FROM TUTORS
+    #   db = PG.connect({dbname: 'bounty_hunter', host: 'localhost'})
+    #   sql = "SELECT * FROM bounties
+    #   WHERE id = $1"
+    #   values = [id]
+    #   db.prepare("find", sql)
+    #   results_array = db.exec_prepared("find", values)
+    #   bounty_hash = results_array[0]
+    #   bounty = Bounty.new(bounty_hash)
+    #   return bounty
+    # end
 
 
     def self.update_name_by_id(id, updated_name)

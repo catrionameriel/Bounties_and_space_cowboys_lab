@@ -77,7 +77,7 @@ class Bounties
     end
 
 
-    def self.update_by_id(id)
+    def self.update_name_by_id(id, what_to_change)
       db = PG.connect( {dbname: 'bounties_database', host: 'localhost'} )
       sql = "UPDATE bounties_table SET (
       name,

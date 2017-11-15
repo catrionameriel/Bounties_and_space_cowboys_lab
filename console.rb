@@ -26,8 +26,8 @@ bounty_01.save
 bounty_02.save
 # bounty_01.delete
 #
-bounty_01.name = 'Jemima'
-Bounties.update_by_id(11)
+# bounty_01.name = 'Jemima'
+Bounties.update_by_id(11,)
 
 
 # Bounties.delete_by_id(1)
